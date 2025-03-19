@@ -1,11 +1,8 @@
-const express = require("express");
+const express = require('express');
 const app = express();
+const router = require('./Routes/router');
 
-app.use(express.json());
-app.get("/", (req, res)=> {
-    res.send("Hello World")
-})
+app.use(express.json()); // Body ke Data ko Json mein convert krta
+app.use('/',router)
 
-app.listen(5000, ()=> {
-    console.log("Server is Running At PORT 5000");  
-})
+app.listen(5000, ()=> console.log('Server Is Running On Port 5000'))
